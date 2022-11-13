@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Animal dog = new Animal("canis");
+   /*     Creatures.Animal dog = new Creatures.Animal("canis");
         dog. name = "Szarik";
         dog.isAlive = true;
 
@@ -14,11 +14,22 @@ public class Main {
         me.pet = dog; //obiekty mogą być polami w innych klasach
         me.pet.feed();
 
-        me.pet = new Animal("felis");
+        me.pet = new Creatures.Animal("felis");
 
         System.out.println(me.pet.name);
         me.pet.feed();
         dog.feed();
         dog.takeForAWalk();
+
+*/
+        Car test = new Car();
+        test.recharge(100);
+
+        //System.out.println(test.model + " " + test.color);
+
+
+
+
+
     }
 }

@@ -1,3 +1,5 @@
+package Creatures;
+
 public class Animal {
     private static final Double DEFAULT_CANIS_WIGHT = 12.3;
     private static final Double DEFAULT_FELIS_WIGHT = 3.2;
@@ -21,13 +23,26 @@ public class Animal {
 
     }
     void feed(){ // metoda, czyli funkcja przypisana do tej klasy
-        switch (isAlive){
-        case true -> this.weight += 1.0 && System.out.println("Dzięki za żarcie");
-        case false ->
-//TU MIALO BY TAK ŻE WAGA ROSNIE JAK JE I ZYJE, ORAZ SPADA JAK ZYJE I IDZIE NA SPACER, A JAK NIE ZYJE TO DZWONI NA POLICJE
-        }
+
         if (isAlive = false) {
             System.out.println("Czy wszystko dobrze z Twoją głową?");
+        }
+    }
+    public void beEaten() {
+        if (this instanceof Human) {
+            System.out.println("POLICJA!");
+        } else {
+            this.isAlive = false;
+            this.weight = 0.0;
+            System.out.println("Mam nadzieje e zmakowalo morderco");
+        }
+    }
+
+    public boolean isPoisoned() {
+        if (this.species.equals("snake")) {
+            return true;
+        } else {
+            return false;
         }
     }
     void takeForAWalk(){
@@ -38,6 +53,8 @@ public class Animal {
             if (weight <= 0.0){
                 isAlive = false;
             }
+
+
 
         }
         else {

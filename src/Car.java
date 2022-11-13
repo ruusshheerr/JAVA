@@ -1,14 +1,19 @@
-public class Car {
-    final String produce;
-    final String model;
-    Double distance;
+public class Car extends Device{  ///extends do dziedziczenia
+
+    String distance;
     String color;
 
-    Car(String produce, String model){
-        this.produce = produce;
-        this.model = model;
+    public Car() {
+
     }
-    public String toString() {
-        return "Producer: " + this.produce + " Model: " + this.model;
+
+    @Override
+    public void recharge(Integer percentage) {
+        System.out.println("Ładuję");
+        System.out.println("Ładuję");
+        System.out.println("Ładuję");
+        System.out.println("Naładowane!");
     }
+
+
 }
