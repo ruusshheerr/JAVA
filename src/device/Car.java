@@ -1,3 +1,5 @@
+package device;
+
 public class Car {
     final String Model;
     final String Producer;

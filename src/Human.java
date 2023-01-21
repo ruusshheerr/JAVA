@@ -1,3 +1,5 @@
+import device.Car;
+
 import java.util.Date;
 
 public class Human {
@@ -55,5 +57,8 @@ public class Human {
     }
     public Double startingCash(){
         return this.Salary;
+    }
+    public String showHuman(){
+        return "First name:"+firstName+", Last Name: "+lastName+", Age:"+Age+", String:"+Pet;
     }
 }

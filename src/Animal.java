@@ -46,6 +46,8 @@ public class Animal {
             } else {
                 System.out.println("Panie, on już nie żyje!");
             }
-
         }
+            public String showAnimal(){
+                return "Species "+species+", Weight: "+weight+", Name: "+name;
+            }
     }
