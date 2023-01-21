@@ -15,15 +15,26 @@ public class Human {
     private Integer Age;
     private String Pet;
 
-    private String Car;
+    private String car;
 
     private Double Salary;
 
     public String getCar() {
-        return Car;
+        return this.car;
     }
 
-    public void setCar(Car myCar) {
+    public void setCar(Car Car) {
+        if(Salary > Car.Value){
+            System.out.println("Udało się kupić samochód za gotówkę");
+            car = Car.showCar();
+        }
+        else if(Salary < Car.Value/12){
+            System.out.println("Udało się kupić samochód na raty");
+            car = Car.showCar();
+        }
+        else{
+            System.out.println("Nie stać Cię biedakuuu");
+        }
     }
 
     public void setSalary(Double Salary){

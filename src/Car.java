@@ -1,8 +1,7 @@
 public class Car {
     final String Model;
     final String Producer;
-
-    private Double Value;
+    public Double Value;
 
     private Integer yearOfProduction;
 
@@ -11,5 +10,9 @@ public class Car {
         Producer = producer;
         Value = value;
         this.yearOfProduction = yearOfProduction;
+    }
+
+    public String showCar(){
+        return "Producer: "+Producer+", Model: "+Model+", Value: "+Value;
     }
 }
