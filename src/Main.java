@@ -1,4 +1,5 @@
 import device.Car;
+import device.Phone;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,11 +37,17 @@ public class Main {
     Man1.setCar(myCar);
     Man1.getCar();
 
-    //-----------------Zadanie V-------------------------
+    //-----------------Zadanie VI-------------------------
     System.out.println("\nZadanie VI\n");
     Car myCar2 = new Car("x6","BMW", 100000.0,2022);
     System.out.println(myCar.equals(myCar2));
     System.out.println(myCar);
     System.out.println(myCar2);
+
+    //-----------------Zadanie VII-------------------------
+    System.out.println("\nZadanie VII\n");
+    myCar.turnOn();
+    Phone myPhone = new Phone("promax", "Iphone", 5000.0);
+    myPhone.turnOn();
     }
 }
