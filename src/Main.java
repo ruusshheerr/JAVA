@@ -1,6 +1,7 @@
+import myproject.creatures.Pet;
 import myproject.device.Car;
 import myproject.device.Phone;
-import myproject.Animal;
+import myproject.creatures.Animal;
 import myproject.Human;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
 
 //-----------------Zadanie I---------------------------
     Human Man1 = new Human("Jan","Kowalski",30,"Reksio");
-    Animal Dog = new Animal("canis", Man1);
+    Animal Dog = new Pet("canis", Man1);
 
     Dog.name = "Reksio";
     System.out.println("\nZadanie I\n");
@@ -57,5 +58,8 @@ public class Main {
     Dog.sell(Man1, Man2, 100.0);
     Dog.sell(Man1, Man2, 1000000.0);
     Man1.sell(Man1, Man2, 100.0);
+        //-----------------Zadanie IX-------------------------
+        System.out.println("\nZadanie IX\n");
+        System.out.println("\nZrobione ale nie ma co wyświetlać\n");
     }
 }

@@ -1,6 +1,9 @@
-package myproject;
+package myproject.creatures;
 
-public class Animal implements Salleable {
+import myproject.Human;
+import myproject.Salleable;
+
+public abstract class Animal implements Salleable, Feedable {
     private static final Double DEFAULT_DOG_WEIGHT = 5.0;
     private static final Double DEFAULT_CAT_WEIGHT = 3.0;
     private static final Double DEFAULT_ANIMAL_WEIGHT = 4.0;
