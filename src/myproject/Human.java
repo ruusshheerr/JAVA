@@ -1,9 +1,12 @@
-import device.Car;
+package myproject;
+
+import myproject.device.Car;
 
 import java.util.Date;
 
-public class Human {
+public class Human implements Salleable {
     private static final Double DEFAULT_SALARY = 10000.0;
+    private Boolean IS_HUMAN = true;
     public Human(String firstName, String lastName, Integer age, String pet) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -17,6 +20,8 @@ public class Human {
     private Integer Age;
     private String Pet;
 
+    private String owner;
+
     private String car;
 
     private Double Salary;
@@ -24,6 +29,16 @@ public class Human {
     public String getCar() {
         return this.car;
     }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
+    }
+
+    public Double cash = 20000.0;
 
     public void setCar(Car Car) {
         if(Salary > Car.Value){
@@ -60,5 +75,13 @@ public class Human {
     }
     public String showHuman(){
         return "First name:"+firstName+", Last Name: "+lastName+", Age:"+Age+", String:"+Pet;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(IS_HUMAN = true ){
+            System.out.println("Nie handluj ludźmi!");
+            return;
+        }
     }
 }

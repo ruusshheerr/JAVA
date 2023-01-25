@@ -1,18 +1,22 @@
-public class Animal {
+package myproject;
+
+public class Animal implements Salleable {
     private static final Double DEFAULT_DOG_WEIGHT = 5.0;
     private static final Double DEFAULT_CAT_WEIGHT = 3.0;
     private static final Double DEFAULT_ANIMAL_WEIGHT = 4.0;
+    private static Boolean IS_HUMAN = false;
 
     final String species;
-
+    public Human owner;
     public String name;
     private Double weight;
-
+    private Double price;
     private Boolean isAlive = true;
 
 
 
-    public Animal(String species) {
+    public Animal(String species, Human owner) {
+        this.owner = owner;
         this.species = species;
         this.isAlive = true;
         if (this.species.equals("canis")) {
@@ -50,4 +54,20 @@ public class Animal {
             public String showAnimal(){
                 return "Species "+species+", Weight: "+weight+", Name: "+name;
             }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(seller != this.owner){
+            System.out.println("Ktoś tu szykuje scam!");
+            return;
+        }
+        if(buyer.getCash() < price){
+            System.out.println("Ktoś tu szykuje scam!");
+            return;
+        }
+        buyer.setCash(buyer.getCash() - price);
+        seller.setCash(seller.getCash() + price);
+        this.owner = buyer;
+        System.out.println("Gratuluje zakupu!");
     }
+}

@@ -1,4 +1,4 @@
-package device;
+package myproject.device;
 
 abstract class Device {
     final String Model;

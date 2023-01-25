@@ -1,12 +1,14 @@
-import device.Car;
-import device.Phone;
+import myproject.device.Car;
+import myproject.device.Phone;
+import myproject.Animal;
+import myproject.Human;
 
 public class Main {
     public static void main(String[] args) {
 
 //-----------------Zadanie I---------------------------
-
-    Animal Dog = new Animal("canis");
+    Human Man1 = new Human("Jan","Kowalski",30,"Reksio");
+    Animal Dog = new Animal("canis", Man1);
 
     Dog.name = "Reksio";
     System.out.println("\nZadanie I\n");
@@ -21,7 +23,6 @@ public class Main {
 
     //-----------------Zadanie II--------------------------
     System.out.println("\nZadanie II\n");
-    Human Man1 = new Human("Jan","Kowalski",30,"Reksio");
     Car myCar = new Car("x6","BMW", 100000.0,2022);
     Man1.setCar(myCar);
 
@@ -49,5 +50,12 @@ public class Main {
     myCar.turnOn();
     Phone myPhone = new Phone("promax", "Iphone", 5000.0);
     myPhone.turnOn();
+
+    //-----------------Zadanie VIII-------------------------
+    System.out.println("\nZadanie VIII\n");
+    Human Man2 = new Human("Marek","Nowak",30,"Bleki");
+    Dog.sell(Man1, Man2, 100.0);
+    Dog.sell(Man1, Man2, 1000000.0);
+    Man1.sell(Man1, Man2, 100.0);
     }
 }
