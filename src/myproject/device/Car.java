@@ -3,7 +3,7 @@ package myproject.device;
 import myproject.Human;
 import myproject.Salleable;
 
-public class Car extends Device implements Salleable {
+public abstract class Car extends Device implements Salleable {
 
     public Double Value;
     public Human owner;
@@ -16,7 +16,7 @@ public class Car extends Device implements Salleable {
     }
 
     public String showCar(){
-        return "Producer: "+Producer+", Model: "+Model+", Value: "+Value;
+        return "Producer: "+producer+", Model: "+model+", Value: "+Value;
     }
 
     @Override
@@ -40,4 +40,5 @@ public class Car extends Device implements Salleable {
         this.owner = buyer;
         System.out.println("Gratuluje zakupu!");
     }
+    abstract public void refuel();
 }

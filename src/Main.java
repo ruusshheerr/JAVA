@@ -1,6 +1,8 @@
+import myproject.creatures.Pet;
 import myproject.device.Car;
+import myproject.device.Diesel;
 import myproject.device.Phone;
-import myproject.Animal;
+import myproject.creatures.Animal;
 import myproject.Human;
 
 public class Main {
@@ -8,7 +10,7 @@ public class Main {
 
 //-----------------Zadanie I---------------------------
     Human Man1 = new Human("Jan","Kowalski",30,"Reksio");
-    Animal Dog = new Animal("canis", Man1);
+    Animal Dog = new Pet("canis", Man1);
 
     Dog.name = "Reksio";
     System.out.println("\nZadanie I\n");
@@ -23,7 +25,7 @@ public class Main {
 
     //-----------------Zadanie II--------------------------
     System.out.println("\nZadanie II\n");
-    Car myCar = new Car("x6","BMW", 100000.0,2022);
+    Car myCar = new Diesel("x6","BMW", 100000.0,2022);
     Man1.setCar(myCar);
 
     //-----------------Zadanie III+IV-------------------------
@@ -40,7 +42,7 @@ public class Main {
 
     //-----------------Zadanie VI-------------------------
     System.out.println("\nZadanie VI\n");
-    Car myCar2 = new Car("x6","BMW", 100000.0,2022);
+    Car myCar2 = new Diesel("x6","BMW", 100000.0,2022);
     System.out.println(myCar.equals(myCar2));
     System.out.println(myCar);
     System.out.println(myCar2);
@@ -57,5 +59,12 @@ public class Main {
     Dog.sell(Man1, Man2, 100.0);
     Dog.sell(Man1, Man2, 1000000.0);
     Man1.sell(Man1, Man2, 100.0);
+    //-----------------Zadanie IX-------------------------
+    System.out.println("\nZadanie IX\n");
+    System.out.println("\nZrobione ale nie ma co wyświetlać\n");
+    //-----------------Zadanie X-------------------------
+    System.out.println("\nZadanie X\n");
+    myPhone.installAnnApp("testowaApka", "1.0", "0.0.0.0.0.");
+    System.out.println("\nSkoro działają poprzednie zadania z samochodem, to samochód działa :)\n");
     }
 }

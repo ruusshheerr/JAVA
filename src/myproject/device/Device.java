@@ -1,15 +1,15 @@
 package myproject.device;
 
 abstract class Device {
-    final String Model;
-    final String Producer;
+    final String model;
+    final String producer;
 
     public Device(String model, String producer) {
-        Model = model;
-        Producer = producer;
+    model = model;
+    producer = producer;
     }
     public String toString(){
-        return "Model: " + this.Model+"Producent: "+this.Producer;
+        return "Model: " + this.model+"Producent: "+this.producer;
     }
     public abstract void turnOn();
 }
