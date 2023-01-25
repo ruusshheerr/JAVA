@@ -1,9 +1,9 @@
+import myproject.Human;
+import myproject.creatures.Animal;
 import myproject.creatures.Pet;
 import myproject.device.Car;
 import myproject.device.Diesel;
 import myproject.device.Phone;
-import myproject.creatures.Animal;
-import myproject.Human;
 
 public class Main {
     public static void main(String[] args) {
@@ -59,12 +59,12 @@ public class Main {
     Dog.sell(Man1, Man2, 100.0);
     Dog.sell(Man1, Man2, 1000000.0);
     Man1.sell(Man1, Man2, 100.0);
-    //-----------------Zadanie IX-------------------------
+    //-----------------Zadanie X-------------------------
     System.out.println("\nZadanie IX\n");
     System.out.println("\nZrobione ale nie ma co wyświetlać\n");
-    //-----------------Zadanie X-------------------------
+    //-----------------Zadanie IX-------------------------
     System.out.println("\nZadanie X\n");
-    myPhone.installAnnApp("testowaApka", "1.0", "0.0.0.0.0.");
-    System.out.println("\nSkoro działają poprzednie zadania z samochodem, to samochód działa :)\n");
+    myPhone.installAnnApp("Appka", "1.0", "0.0.0.0.0");
+    System.out.println("\nSkoro samochody działająw poprzednich zadaniach to jest z nimi ok.\n");
     }
 }
