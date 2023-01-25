@@ -10,7 +10,7 @@ public abstract class Car extends Device implements Salleable {
     private Integer yearOfProduction;
 
     public Car(String model, String producer, Double value, Integer yearOfProduction) {
-        super(model, producer);
+        super(model, producer, model1, producer1);
         Value = value;
         this.yearOfProduction = yearOfProduction;
     }
