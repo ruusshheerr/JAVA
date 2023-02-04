@@ -2,32 +2,38 @@ package myproject;
 
 import myproject.device.Car;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Human implements Salleable {
     private static final Double DEFAULT_SALARY = 10000.0;
-    private Boolean IS_HUMAN = true;
-    public Human(String firstName, String lastName, Integer age, String pet) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        Age = age;
-        Pet = pet;
-        this.Salary = DEFAULT_SALARY;
-    }
-
+    private static final int DEFAULT_GARAGE_SIZE = 2;
     private String firstName;
     private String lastName;
     private Integer Age;
     private String Pet;
-
     private String owner;
 
-    private String car;
+    public Car[] garage;
 
     private Double Salary;
 
-    public String getCar() {
-        return this.car;
+
+    private Boolean IS_HUMAN = true;
+    public Human(String firstName, String lastName, Integer age, String pet, int garageSize) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.Age = age;
+        this.Pet = pet;
+        this.Salary = DEFAULT_SALARY;
+        this.garage = new Car[garageSize];
+    }
+
+    public Human(String firstName, String lastName, Integer age, String pet){
+        this(firstName, lastName, age, pet, DEFAULT_GARAGE_SIZE);
+    }
+    public Car getCar(int parkingSpot) {
+        return garage[parkingSpot];
     }
 
     public Double getCash() {
@@ -40,17 +46,30 @@ public class Human implements Salleable {
 
     public Double cash = 20000.0;
 
-    public void setCar(Car Car) {
-        if(Salary > Car.Value){
-            System.out.println("Udało się kupić samochód za gotówkę");
-            car = Car.showCar();
-        }
-        else if(Salary < Car.Value/12){
-            System.out.println("Udało się kupić samochód na raty");
-            car = Car.showCar();
-        }
-        else{
-            System.out.println("Nie stać Cię biedakuuu");
+    public void setCar(Car car, int parkingSpot) {
+        garage[parkingSpot] = car;
+    }
+    public void buyCar(Car car, double value) {
+        if (this.cash >= value) {
+            this.cash -= value;
+            for(int i=0;i<garage.length;i++){
+                if(garage[i]==null){
+                    garage[i]=car;
+                    break;
+                }
+            }
+            System.out.println("Kupiłeś samochód za gotówkę");
+
+        } else if (this.Salary >= (value / 12.0)) {
+            System.out.println("Kupiłeś samochód na kredyt");
+            for(int i=0;i<garage.length;i++){
+                if(garage[i]==null){
+                    garage[i]=car;
+                    break;
+                }
+            }
+        } else {
+            System.out.println("wez sobie znajdź pracę lepiej");
         }
     }
 
@@ -83,5 +102,19 @@ public class Human implements Salleable {
             System.out.println("Nie handluj ludźmi!");
             return;
         }
+    }
+    public Double getGarageValue(){
+        double value = 0.0;
+        for(Car car : garage){
+            if(car != null){
+                value += car.getValue();
+            }
+        }
+        return value;
+    }
+
+    public void sortCar(){
+        Arrays.sort(garage, (car1, car2) -> car1.getYearOfProduction() - car2.getYearOfProduction());
+
     }
 }

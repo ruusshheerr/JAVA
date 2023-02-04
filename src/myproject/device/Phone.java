@@ -18,8 +18,7 @@ public class Phone extends Device implements Salleable {
         return "Producer: "+producer+", Model: "+model+", Value: "+Value;
     }
     public Phone(String model, String producer, Double value) {
-        super(model, producer);
-        Value = value;
+        super(model, producer, value);
     }
     @Override
     public void turnOn() {

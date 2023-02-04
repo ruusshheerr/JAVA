@@ -26,7 +26,6 @@ public class Main {
     //-----------------Zadanie II--------------------------
     System.out.println("\nZadanie II\n");
     Car myCar = new Diesel("x6","BMW", 100000.0,2022);
-    Man1.setCar(myCar);
 
     //-----------------Zadanie III+IV-------------------------
     System.out.println("\nZadanie III+IV\n");
@@ -37,8 +36,8 @@ public class Main {
 
     //-----------------Zadanie V-------------------------
     System.out.println("\nZadanie V\n");
-    Man1.setCar(myCar);
-    Man1.getCar();
+    Man1.buyCar(myCar, 100.0);
+    Man1.getCar(1);
 
     //-----------------Zadanie VI-------------------------
     System.out.println("\nZadanie VI\n");
@@ -59,12 +58,16 @@ public class Main {
     Dog.sell(Man1, Man2, 100.0);
     Dog.sell(Man1, Man2, 1000000.0);
     Man1.sell(Man1, Man2, 100.0);
-    //-----------------Zadanie X-------------------------
+    //-----------------Zadanie IX-------------------------
     System.out.println("\nZadanie IX\n");
     System.out.println("\nZrobione ale nie ma co wyświetlać\n");
-    //-----------------Zadanie IX-------------------------
+    //-----------------Zadanie X-------------------------
     System.out.println("\nZadanie X\n");
     myPhone.installAnnApp("Appka", "1.0", "0.0.0.0.0");
     System.out.println("\nSkoro samochody działająw poprzednich zadaniach to jest z nimi ok.\n");
+    //-----------------Zadanie XI-------------------------
+    System.out.println("\nZadanie XI\n");
+    myCar.sell(Man1, Man2, 100.0);
+    Man1.getGarageValue();
     }
 }
